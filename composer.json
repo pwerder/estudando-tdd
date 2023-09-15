@@ -1,0 +1,9 @@
+{
+    "name": "pribeiro/tdd",
+    "autoload": {
+        "psr-4": {
+            "Pribeiro\\Tdd\\": "src/"
+        }
+    },
+    "require": {}
+}
