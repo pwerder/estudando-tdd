@@ -21,7 +21,7 @@ class AvaliadorTest extends TestCase
         self::assertEquals(true, $result);
     }
 
-    public function testsAvaliandoSeAIdadeRetornaFalso()
+    public function testsAvaliandoSeAIdadeRetornaFalsoComNumeroMenorPermetido()
     {
         // Arrange - Given / Preparamos o cenário do teste
         $paulo = new User('Paulo', 13);
@@ -32,4 +32,17 @@ class AvaliadorTest extends TestCase
         // Assert - Then / Verificamos se a saída é a esperada
         self::assertEquals(false, $result);
     }
+
+    public function testsAvaliandoSeAIdadeRetornaFalsoComNumeroMaiorPermetido()
+    {
+        // Arrange - Given / Preparamos o cenário do teste
+        $paulo = new User('Paulo', 101);
+        $belo = new Show('Belo');
+        $entrada = new Avaliador($paulo, $belo);
+        // Act - When / Executamos o código a ser testado
+        $result = $entrada->validar();
+        // Assert - Then / Verificamos se a saída é a esperada
+        self::assertEquals(false, $result);
+    }
+
 }

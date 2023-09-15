@@ -20,7 +20,7 @@ class Avaliador
     {
         $idade = $this->user->getIdade();
 
-        if ($idade > 18 && $idade < 120) {
+        if ($idade > 18 && $idade < 100) {
             return true;
         }
         return false;
