@@ -5,7 +5,7 @@ namespace Pribeiro\Tdd\Service;
 use Pribeiro\Tdd\Model\Show;
 use Pribeiro\Tdd\Model\User;
 
-class Ingresso
+class Avaliador
 {
     private User $user;
     private Show $show;
@@ -16,13 +16,13 @@ class Ingresso
         $this->show = $show;
     }
 
-    public function validar(): string
+    public function validar(): bool
     {
         $idade = $this->user->getIdade();
 
         if ($idade > 18 && $idade < 120) {
-            return 'Entrada permetida para o show do(a): ' . $this->show->getName();
+            return true;
         }
-        return 'Entrada negada para o show do(a): ' . $this->show->getName();
+        return false;
     }
 }
